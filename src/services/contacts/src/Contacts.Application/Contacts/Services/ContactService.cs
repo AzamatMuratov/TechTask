@@ -5,9 +5,9 @@ using BuildingBlocks.Shared.Pagination.Extensions;
 using Contacts.Application.Contacts.Interfaces;
 using Contacts.Application.Contacts.Models;
 using Contacts.Application.Persistence.ApplicationDb;
+using Contacts.Domain.Contacts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Products.Domain.Contacts;
 
 namespace Contacts.Application.Contacts.Services;
 
@@ -16,6 +16,7 @@ public class ContactService(
     IMapper mapper,
     ILogger<ContactService> logger) : IContactService
 {
+    /// <inheritdoc />
     public async Task<PaginatedResult<ContactViewModel>> GetListAsync(
         PaginatedRequest paginatedRequest,
         CancellationToken cancellationToken = default)
@@ -28,6 +29,7 @@ public class ContactService(
             .ToPaginatedResultAsync(paginatedRequest, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Guid> AddAsync(
         AddContactModel addModel,
         CancellationToken cancellationToken = default)
@@ -66,6 +68,7 @@ public class ContactService(
         }
     }
     
+    /// <inheritdoc />
     public async Task UpdateAsync(
         Guid entityId,
         UpdateContactModel updateModel,
@@ -111,6 +114,7 @@ public class ContactService(
         }
     }
 
+    /// <inheritdoc />
     public async Task DeleteAsync(
         Guid id,
         CancellationToken cancellationToken = default)

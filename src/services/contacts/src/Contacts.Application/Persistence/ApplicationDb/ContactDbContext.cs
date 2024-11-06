@@ -1,6 +1,6 @@
 using Contacts.Application.Persistence.Configuration;
+using Contacts.Domain.Contacts;
 using Microsoft.EntityFrameworkCore;
-using Products.Domain.Contacts;
 
 namespace Contacts.Application.Persistence.ApplicationDb;
 

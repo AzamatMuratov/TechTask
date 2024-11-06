@@ -1,4 +1,4 @@
-namespace Products.Domain.Contacts;
+namespace Contacts.Domain.Contacts;
 
 public class Contact
 {

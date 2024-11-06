@@ -17,7 +17,7 @@ public static class EnumerableExtensions
 			.Take(request.PageSize);
 
 	/// <summary>
-	/// Converts an <see cref="IEnumerable{T}"/> sequence to a <see cref="PaginatedResult{T}"/> object,
+	/// Converts a <see cref="IEnumerable{T}"/> sequence to a <see cref="PaginatedResult{T}"/> object,
 	/// applying pagination.
 	/// </summary>
 	/// <typeparam name="T">The type of elements in the sequence.</typeparam>

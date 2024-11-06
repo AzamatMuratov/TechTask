@@ -28,12 +28,7 @@ public static class WebApplicationExtensions
 	/// <returns>True if migration should be skipped; otherwise, false.</returns>
 	private static bool MigrationSkipRequested()
 	{
-		if (!bool.TryParse(Environment.GetEnvironmentVariable("SKIP_MIGRATION"), out var skipRequested) ||
-		    !skipRequested)
-		{
-			return false;
-		}
-
-		return true;
+		return bool.TryParse(Environment.GetEnvironmentVariable("SKIP_MIGRATION"), out var skipRequested) &&
+		       skipRequested;
 	}
 }
